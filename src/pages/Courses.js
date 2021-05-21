@@ -1,6 +1,7 @@
 import axios from "axios";
 import React,{useState,useEffect} from "react";
-import { Card,Button,Container,Row,Col} from 'react-bootstrap'
+import { Card,Container,Row,Col} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 const Courses = () => {
   const [courses, setCourses]=useState([])
@@ -37,7 +38,9 @@ const Courses = () => {
               height='150' 
             />
             <Card.Body>
+              <Link to={`/detail/${course.id}`}>
               <Card.Title>{course.title}</Card.Title>
+              </Link>
               <Card.Text>{course.detail}</Card.Text>
             </Card.Body>
           </Card>

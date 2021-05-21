@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import About from "./pages/About";
 import Courses from "./pages/Courses";
 import Products from "./pages/Products";
+import Detail from './pages/Detail'
 
 const App = () => {
   return (
@@ -20,6 +21,9 @@ const App = () => {
         </Route>
         <Route path="/products">
           <Products />
+        </Route>
+        <Route path='/detail/:id'>
+          <Detail/>
         </Route>
       </Switch>
     </HashRouter>
