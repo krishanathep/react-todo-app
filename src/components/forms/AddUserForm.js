@@ -17,6 +17,7 @@ const AddUserForm = (props) => {
         if(!user.name || !user.username) return
 
         props.addUser(user)
+        setUser(initialFormState)
     }}>
         <Form.Group>
           <Form.Label>Name</Form.Label>
@@ -38,7 +39,7 @@ const AddUserForm = (props) => {
             //placeholder="Enter username"
           />
         </Form.Group>
-        <Button type="submit">Add new username</Button>
+        <Button variant='info' type="submit">Add new username</Button>
       </Form>
     </div>
   );

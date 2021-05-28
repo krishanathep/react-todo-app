@@ -43,8 +43,8 @@ const EditUserForm = (props) => {
             placeholder="Enter username"
           />
         </Form.Group>
-        <Button type="submit">Add new username</Button>{' '}
-        <Button onClick={()=>props.setEditing(false)}>Cancel</Button>
+        <Button variant='info' type="submit">Add new username</Button>{' '}
+        <Button variant='secondary' onClick={()=>props.setEditing(false)}>Cancel</Button>
       </Form>
     </div>
   );
