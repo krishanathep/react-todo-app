@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Card, Container, Row, Col } from "react-bootstrap";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 
 const Detail = () => {
   const { id } = useParams();
-  const history = useHistory();
+  //const history = useHistory();
 
   const [detail, setDetail] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -21,6 +21,7 @@ const Detail = () => {
       setDetail(res.data.data);
     } catch (error) {
       console.log(error);
+      setError(error)
     } finally {
       setLoading(false);
     }
@@ -29,6 +30,18 @@ const Detail = () => {
   useEffect(() => {
     getData(id);
   }, [id]);
+
+  if(loading===true){
+    return(
+      <p>loading...</p>
+    )
+  }
+
+  if(error){
+    return(
+      <p>{error.response.data.message}</p>
+    )
+  }
 
   return (
     <Container>

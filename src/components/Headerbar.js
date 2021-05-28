@@ -31,6 +31,13 @@ const NavBar = () => {
             >
               Products
             </NavLink>
+            <NavLink
+              to="/crud"
+              className="nav-link"
+              activeClassName="active"
+            >
+              CRUD
+            </NavLink>
           </Nav>
         </Navbar.Collapse>
       </div>

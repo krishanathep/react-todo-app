@@ -5,6 +5,7 @@ import About from "./pages/About";
 import Courses from "./pages/Courses";
 import Products from "./pages/Products";
 import Detail from './pages/Detail'
+import CRUD from './pages/Crud'
 
 const App = () => {
   return (
@@ -24,6 +25,9 @@ const App = () => {
         </Route>
         <Route path='/detail/:id'>
           <Detail/>
+        </Route>
+        <Route path='/crud'>
+          <CRUD/>
         </Route>
       </Switch>
     </HashRouter>

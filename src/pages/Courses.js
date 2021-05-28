@@ -16,6 +16,7 @@ const Courses = () => {
       setCourses(res.data.data)
     }catch(error){
       console.log(error)
+      setError(error)
     }finally {
       setLoading(false)
     }
@@ -24,6 +25,18 @@ const Courses = () => {
   useEffect(()=>{
     getData()
   },[])
+
+  if(loading===true){
+    return(
+      <p>loading...</p>
+    )
+  }
+
+  if(error){
+    return(
+      <p>{error.response.data.message}</p>
+    )
+  }
 
   return (
     <Container>
