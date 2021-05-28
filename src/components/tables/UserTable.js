@@ -20,7 +20,7 @@ const UserTable = (props) => {
               <td>{user.name}</td>
               <td>{user.username}</td>
               <td>
-                <Button>Edit</Button>{' '} 
+                <Button onClick={()=>{props.editRow(user)}}>Edit</Button>{' '} 
                 <Button onClick={()=>props.deleteUser(user.id)}>Delete</Button>
               </td>
             </tr>
